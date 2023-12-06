@@ -1,0 +1,272 @@
+{% extends "layout.html"%}
+
+{% block content %}
+
+<h2 style="color: #18a08e;">{{ current_user.fullname }}</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fumigaciones AMT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+
+
+
+
+
+
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="rounded img-fluid" src="/static/img/logo2.png" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="h1" style="color: #18a08e;"><b>Fumigaciones</b> AMT</h1>
+                                <h3 class="h2" style="color: #18a08e;">Bienvenidos a nuestra empresa de fumigación</h3>
+                                <p style="color: black;">
+                                    Contamos con un equipo profesional capacitado y experimentado para llevar a cabo
+                                    esta tarea a lo largo y ancho del NOA.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="rounded img-fluid border" src="/static/img/img7.jpeg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1" style="color: #18a08e;"><b>¿Por que elegirnos?</b></h1>
+                                <h3 class="h2" style="color: #18a08e">Inspección Meticulosa</h3>
+                                <p style="color: black;">
+                                    Brindamos soluciones efectivas y personalizadas. Contamos con todas las
+                                    certificaciones necesarias
+                                    para prestar nuestros servicios: Calidad de vida, Mediana preventiva y Saneamiento
+                                    Ambiental.
+                                    Al elegirnos, tendras la tranquilidad de un ambiente seguro y libre de plagas.
+                                    ¡Confía en nuestra experiencia y profesionalismo, para mantener
+                                    tu hogar libre de invasores no deseados!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="rounded img-fluid border" src="/static/img/img6.jpeg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1" style="color: #18a08e;"><b>Servicio Garantizado</b></h1>
+                                <h3 class="h2" style="color: #18a08e;">Material de calidad y Equipos de vanguardia</h3>
+                                <p style="color: black;">
+                                    Nuestro servicios se llevan a cabo con productos especialemente elaborados por
+                                    empresas lideres
+                                    del mercado nacional y habilitados por ANMAT, cuidando la salud de nuestros clientes
+                                    y manteniendo un constante compromiso con el medio ambiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel"
+            role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel"
+            role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <script>
+        // Inicializar el carrusel
+        var carousel = document.getElementById('template-mo-zay-hero-carousel');
+        var carouselInstance = new bootstrap.Carousel(carousel);
+    </script>
+    <script>
+        var carousel = document.getElementById('template-mo-zay-hero-carousel');
+        var carouselInstance = new bootstrap.Carousel(carousel, {
+            interval: 8000 // Intervalo de tiempo en milisegundos entre transiciones automáticas (opcional)
+        });
+    </script>
+    <!-- End Banner Hero -->
+
+    7
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1" style="color: #18a08e;"><b>Servicios</b></h1>
+                <p>
+
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="/static/img/img4.jpeg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3" style="color: #18a08e;">Control de Plagas</h5>
+                <p class="text-center">
+                    <a class="btn btn-success" style="background-color: #18a08e;" onclick="mostrarTexto3()">Ver más</a>
+                </p>
+                <p id="texto3" class="text-center" style="display: none; color: black;"> En fumigaciones en exterior se trabaja con pulverizador a explosión, convirtiendo
+                el producto en particulas de microgotas llegando asi a todas las superficies. En interior se trabaja con termonebulizador de descarga total, este emite un neblina que mata 
+            todo a su alrededor. </p>
+            </div>
+
+            <script type="text/javascript">
+                function mostrarTexto3() {
+                    var texto3 = document.getElementById("texto3");
+                    if (texto3.style.display === "none") {
+                        texto3.style.display = "block";
+                    } else {
+                        texto3.style.display = "none";
+                    }
+                }
+            </script>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="/static/img/img5.jpeg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3" style="color: #18a08e;">Desinfección</h2>
+                <p class="text-center">
+                    <a class="btn btn-success" style="background-color: #18a08e;" onclick="mostrarTexto2()">Ver más</a>
+                </p>
+                <p id="texto2" class="text-center" style="display: none; color: black;">Conciste en matar las bacterias con sanitizante llamado Amonio Cuaternario de 5ta generación,
+                     se aplica en toda superficie en conctacto con el ser humano. Este no tiene grado de toxicidad. </p>
+            </div>
+
+            <script type="text/javascript">
+                function mostrarTexto2() {
+                    var texto2 = document.getElementById("texto2");
+                    if (texto2.style.display === "none") {
+                        texto2.style.display = "block";
+                    } else {
+                        texto2.style.display = "none";
+                    }
+                }
+            </script>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="/static/img/img8.jpeg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3" style="color: #18a08e;">Fumigación</h2>
+                <p class="text-center">
+                    <a class="btn btn-success" style="background-color: #18a08e;" onclick="mostrarTexto()">Ver más</a>
+                </p>
+                <p id="texto" class="text-center" style="display: none; color: black;">Destinado a plagas como pulgas, garrapatas, cucarachas, roedores,
+                detectamos el foco de infeccion mayoritario, desarmamos para una mayor efectividad si hace falta, aplicamos el producto que sea necesario
+            para dicho problema. Utilizando diferentes modalidades como mochila bomba manual, polvo citronil con poder residual.</p>
+            </div>
+
+            <script type="text/javascript">
+                function mostrarTexto() {
+                    var texto = document.getElementById("texto");
+                    if (texto.style.display === "none") {
+                        texto.style.display = "block";
+                    } else {
+                        texto.style.display = "none";
+                    }
+                }
+            </script>
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+    <!-- End Categories of The Month -->
+
+
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 border-bottom pb-3 border-light logo" style="color: #FFFFFF;">Contacto</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            <a><b>Telefono: </b> 385-4777846 </a>
+                            <a href="https://wa.me/3854777846" target="_blank">
+                                <img src="/static/img/wp.png" alt="Icono de WhatsApp" width="25" height="25">
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a><b>Direccion: </b> Calle 6 Mza 11 Lote 17 B° Paraiso </a>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3531.58358161359!2d-64.2734260245319!3d-27.73014067616951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQzJzQ4LjUiUyA2NMKwMTYnMTUuMSJX!5e0!3m2!1ses!2sar!4v1699916340776!5m2!1ses!2sar"width="350" height="200" style="border: 2px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a><b>Correo: </b> ignatolemo@hotmail.com</a>
+                            <a
+                                href="mailto:ignatolemo@hotmail.com?subject=Quiero%20contratar%20tus%20servicios&body=¡Hola! Me interesa contratar tus servicios de fumigación, por favor contáctate conmigo">Enviar
+                                Correo</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="w-100 bg-black py-3">
+                <div class="container">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <p class="text-left text-light">
+                                Copyright &copy; 2023 Company A.M.T
+                                | Designed by <a rel="sponsored"
+                                    href="mailto:daniel-andrada@hotmail.com?subject=Quiero%20más%20info%20sobre%20tu%20Compa%C3%B1ia&body=%C2%A1Hola!%20Te%20contacto%20desde%20la%20pagina%20AMT%20%2C%20quiero%20saber%20más%20informaci%C3%B3n%20sobre%20tus%20servicios%20como%20dise%C3%B1ador%20web.%20">M.T.D.J  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </footer>
+
+</html>
+
+{% endblock %}

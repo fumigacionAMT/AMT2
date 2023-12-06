@@ -1,0 +1,15 @@
+body {
+    /* Para un fondo de imagen calendario.html */
+    background-image: url('/static/img/fondo3.jpeg');
+    background-size: 50% ; /* Ajusta el tamaño de la imagen al contenedor */
+    background-repeat: repeat; /* Evita la repetición de la imagen */
+  }
+
+.table-custom {
+
+    background-color: beige;
+    color: black;
+
+}
+
+/* #726E6B

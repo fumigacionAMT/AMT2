@@ -1,0 +1,88 @@
+{% extends "layout.html"%}
+
+{% block content %}
+<head>
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <!-- Agrega el enlace al archivo CSS aquí -->
+  <link rel="stylesheet" href="/static/css/main.css">
+  <!-- Asegúrate de que la ruta refleje la ubicación correcta de tu archivo style.css dentro de la carpeta static -->
+</head>
+
+
+
+
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Iniciar
+      Sesión</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrar</label>
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <form action="/inicio" method="POST">
+        {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+        <br/>
+        {% for message in messages %}
+        <div class="alert alert-primary alert-dismissible" role="alert">
+          <strong> {{message }} </strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        
+        {% endfor %}
+        {% endif %}
+          
+
+        {% endwith %}
+
+          <div class="group">
+            <label for="user" class="label">Usuario</label>
+            <input id="user" type="text" name= "username" class="input" autocomplete="off" value="{{ username }}">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Contraseña</label>
+            <input id="pass" type="password" class="input" name="password" data-type="password" value="{{ password }}">
+          </div>
+
+          <div class="group">
+            <input type="submit" class="button" value="Ingresar">
+          </div>
+        </form>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#forgot">Olvidaste tu contraseña?</a>
+        </div>
+      </div>
+      <div class="sign-up-htm">
+        <div class="group">
+          <label for="user" class="label">Usuario</label>
+          <input id="user" type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Contraseña</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Repetir Contraseña</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Email</label>
+          <input id="pass" type="text" class="input">
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Registrar">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <label for="tab-1">¿Ya posees un usuario?</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

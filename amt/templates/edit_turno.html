@@ -1,0 +1,82 @@
+{% extends "layout.html"%}
+
+{% block content %}
+
+<div class="col-md-5 offset-md-4">
+    <div class="card card-body">
+        <form action="/updateTurno/{{ eturno[0] }}" method="POST">     
+            
+            <div class="form-group">
+                <input type="text" name="nomCliente" placeholder="Nombre del Cliente" value="{{ eturno[1] }}"
+                class="form-control" autocomplete="off">  
+            </div>
+            <div class="form-group">
+                <select name="nomServicio" class="form-select">
+                    <option value="" disabled selected>Indique el Servicio</option>
+                    <option value="Fumigacion" {% if eturno[2] == 'Fumigacion' %} selected {%endif %}>Fumigacion</option>
+                    <option value="Sanitización" {% if eturno[2] == 'Sanitización' %} selected {%endif %}>Sanitización</option>
+                    <option value="Desratización" {% if eturno[2] == 'Desratización' %} selected {%endif %}>Desratización</option>
+                    <option value="Fumigación y Desratización" {% if eturno[2] == 'Fumigación y Desratización' %} selected {%endif %}>Fumigación y Desratización</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <select name="localidad" class="form-select">
+                  <option value="" disabled selected>Localidad</option>
+                  <option value="Sgo del Estero - La Banda" {% if eturno[3] == 'Sgo del Estero - La Banda' %} selected {%endif %}>Sgo del Estero - La Banda</option>
+                  <option value="Sgo del Estero - Capital" {% if eturno[3] == 'Sgo del Estero - Capital' %} selected {%endif %}>Sgo del Estero - Capital</option>
+                  <option value="Sgo del Estero - Termas" {% if eturno[3] == 'Sgo del Estero - Termas' %} selected {%endif %}>Sgo del Estero - Termas</option>
+                  <option value="Sgo del Estero - Fernandez" {% if eturno[3] == 'Sgo del Estero - Fernandez' %} selected {%endif %}>Sgo del Estero - Fernandez</option>
+                  <option value="Sgo del Estero - Beltran" {% if eturno[3] == 'Sgo del Estero - Beltran' %} selected {%endif %}>Sgo del Estero - Beltran</option>
+                  <option value="Tucuman" {% if eturno[3] == 'Tucuman' %} selected {%endif %}>Tucuman</option>
+                </select>            
+            </div>
+            <div class="form-group">
+                <input type="text" name="direccion" placeholder="Direccion" value="{{ eturno[4] }}"
+                class="form-control" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="text" name="nomFumigador" placeholder="Nombre del Fumigador" value="{{ eturno[5] }}"
+                class="form-control" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="text" name="producto" placeholder="Nombre del Producto" value="{{ eturno[6] }}"
+                class="form-control" autocomplete="off">
+            </div>    
+            <div class="form-group">
+                <input type="date" name="fecha" placeholder="Fecha" value="{{ eturno[7] }}"
+                class="form-control" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="text" name="precio" placeholder="Precio de la Fumigacion" value="{{ eturno[8] }}"
+                class="form-control" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="text" name="horario" placeholder="Horario de Fumigacion" value="{{ eturno[9] }}"
+                class="form-control" autocomplete="off">
+            </div>  
+            <div class="form-group">
+                <input type="text" name="nomComercio" placeholder="Nombre del Comercio" value="{{ eturno[10] }}"
+                class="form-control" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <select name="estado" class="form-select">
+                  <option value="" disabled selected>Estado del Servicio</option>
+                  <option value="A confirmar" {% if eturno[11] == 'A confirmar' %} selected {%endif %}>A confirmar</option>
+                  <option value="Confirmado" {% if eturno[11] == 'Confirmado' %} selected {%endif %}>Confirmado</option>
+                  <option value="Realizado" {% if eturno[11] == 'Realizado' %} selected {%endif %}>Realizado</option>
+                </select>            
+            </div>
+               
+            <button type="submit" class="btn btn-success btn.block">
+               Guardar
+            </button>
+        
+        
+        </form>
+        
+    </div>
+</div>
+
+
+
+{% endblock %}

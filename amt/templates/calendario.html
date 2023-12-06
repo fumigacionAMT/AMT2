@@ -1,0 +1,96 @@
+{% extends "layout.html"%}
+
+{% block content %}
+<head>
+  <!-- Agrega el enlace al archivo CSS aquí -->
+  <link rel="stylesheet" href="/static/css/main.css">
+  <!-- Asegúrate de que la ruta refleje la ubicación correcta de tu archivo style.css dentro de la carpeta static -->
+</head>
+
+<h1 class="text-center mb-4" style="color: #18a08e;"><b>Agendar Turno de Fumigación</b></h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<div class="row">
+  <div class="col-md-5 mx-auto" >
+    <div class="card card-body" style="background-color: #f7f7f7;">
+      <form action="/add_calendario" method="POST">        
+        <div class="form-group">
+          <input type="text" name="nomCliente" placeholder="Nombre del Cliente" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <input type="text" name="nomComercio" placeholder="Nombre del Comercio" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <select name="nomServicio" class="form-select">
+            <option value="" disabled selected>Indique el Servicio</option>
+            <option value="Fumigacion">Fumigacion</option>
+            <option value="Sanitización">Sanitización</option>
+            <option value="Desratización">Desratización</option>
+            <option value="Fumigación y Desratización">Fumigación y Desratización</option>
+            <!-- Agrega más opciones según sea necesario -->
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="localidad" class="form-select">
+            <option value="" disabled selected>Localidad</option>
+            <option value="Sgo del Estero - La Banda">Sgo del Estero - La Banda</option>
+            <option value="Sgo del Estero - Capital">Sgo del Estero - Capital</option>
+            <option value="Sgo del Estero - Termas">Sgo del Estero - Termas</option>
+            <option value="Sgo del Estero - Fernandez">Sgo del Estero - Fernandez</option>
+            <option value="Sgo del Estero - Beltran">Sgo del Estero - Beltran</option>
+            <option value="Sgo del Estero - Beltran">Sgo del Estero - Arraga</option>
+            <option value="Sgo del Estero - Beltran">Sgo del Estero - Clodomira</option>
+            <option value="Sgo del Estero - Beltran">Sgo del Estero - Frias</option>
+            <option value="Tucuman">Tucuman</option>
+          </select>            
+        </div>
+        <div class="form-group">
+          <input type="text" name="direccion" placeholder="Direccion" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <input type="text" name="nomFumigador" placeholder="Nombre de/los Fumigadores a cargo" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <input type="text" name="producto" placeholder="Productos a utilizar" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <input type="date" name="fecha" placeholder="Fecha de Fumigacion" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <input type="text" name="horario" placeholder="Horario de Fumigacion" class="form-control" autocomplete="off">
+        </div><div class="form-group">
+          <input type="text" name="precio" placeholder="Precio del Servicio" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <select name="estado" class="form-select">
+            <option value="" disabled selected>Estado del Servicio</option>
+            <option value="A confirmar">A confirmar</option>
+            <option value="Confirmado">Confirmado</option>
+            <option value="Realizado">Realizado</option>
+            <!-- Agrega más opciones según sea necesario -->
+          </select>
+        </div>
+
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary btn-block" style="background-color: #337ab7;">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-8"></div>
+</div>
+
+
+
+
+{% endblock %}

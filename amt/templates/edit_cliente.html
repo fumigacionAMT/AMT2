@@ -1,0 +1,163 @@
+{% extends "layout.html"%}
+
+{% block content %}
+
+<div class="col-md-5 offset-md-4">
+    <div class="card card-body">
+        <form action="/update/{{ecliente.0}}" method="POST" onsubmit="return validateForm()">     
+            
+            <div class="form-group">
+                <input type="text" name="nomcliente" placeholder="Nombre" value="{{ ecliente.1}}"
+                class="form-control" autocomplete="off">
+                <span id="error-nomcliente" style="color: red; display: none;">Por favor completar este campo</span>  
+            </div>
+            <div class="form-group">
+                <input type="text" name="apellidocliente" placeholder="Nombre de Fantasia" value="{{ecliente.2}}"
+                class="form-control" autocomplete="off">
+                <span id="error-apellidocliente" style="color: red; display: none;">Por favor completar este campo</span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="direccion" placeholder="Direccion" value="{{ecliente.3}}"
+                class="form-control" autocomplete="off">
+                <span id="error-direccion" style="color: red; display: none;">Por favor completar este campo</span>
+            </div>
+            <div id="tipocliente" class="form-group">
+                <select name="tipocliente" class="form-select">
+                  <option value="" disabled selected>Tipo de Empresa</option>
+                  <option value="Empresa" {% if ecliente[4] == 'Empresa' %} selected {%endif %}>Empresa</option>
+                  <option value="Local" {% if ecliente[4] == 'Local' %} selected {%endif %}>Local</option>
+                  <option value="Vivienda" {% if ecliente[4] == 'Vivienda' %} selected {%endif %}>Vivienda</option>
+                </select>
+                <span id="error-tipocliente" style="color: red; display: none;">Por favor completar este campo</span>
+            </div>
+            <div id="certificado" class="form-group">
+                <select name="certificado" class="form-select">
+                  <option value="" disabled selected>Duracion del Certificado</option>
+                  <option value="1 mes" {% if ecliente[6] == '1 mes' %} selected {%endif %}>1 mes</option>
+                  <option value="2 meses" {% if ecliente[6] == '2 meses' %} selected {%endif %}>2 meses</option>
+                  <option value="3 meses" {% if ecliente[6] == '3 meses' %} selected {%endif %}>3 meses</option>
+                  <option value="4 meses" {% if ecliente[6] == '4 meses' %} selected {%endif %}>4 meses</option>
+                  <option value="5 meses" {% if ecliente[6] == '5 meses' %} selected {%endif %}>5 meses</option>
+                  <option value="6 meses" {% if ecliente[6] == '6 meses' %} selected {%endif %}>6 meses</option>
+                  <option value="7 meses" {% if ecliente[6] == '7 meses' %} selected {%endif %}>7 meses</option>
+                  <option value="8 meses" {% if ecliente[6] == '8 meses' %} selected {%endif %}>8 meses</option>
+                  <option value="9 meses" {% if ecliente[6] == '9 meses' %} selected {%endif %}>9 meses</option>
+                  <option value="10 meses" {% if ecliente[6] == '10 meses' %} selected {%endif %}>10 meses</option>
+                  <option value="11 meses" {% if ecliente[6] == '11 meses' %} selected {%endif %}>11 meses</option>
+                  <option value="1 año" {% if ecliente[6] == '1 año' %} selected {%endif %}>1 año</option>
+                  <option value="2 años" {% if ecliente[6] == '2 años' %} selected {%endif %}>2 años</option>                    
+                </select>
+                <span id="error-certificado" style="color: red; display: none;">Por favor completar este campo</span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="presupuesto" placeholder="Presupuesto" value="{{ecliente.7}}"
+                class="form-control" autocomplete="off">
+                <span id="error-presupuesto" style="color: red; display: none;">Por favor completar este campo</span>
+            </div> 
+            <div class="form-group">
+                <input type="text" name="cuit" placeholder="CUIT" value="{{ecliente.8}}"
+                class="form-control" autocomplete="off">
+                <span id="error-cuit" style="color: red; display: none;">Por favor completar este campo</span>
+            </div> 
+            <div class="form-group">
+                <input type="text" name="celular" placeholder="celular" value="{{ ecliente.5}}"
+                class="form-control" autocomplete="off">
+                <span id="error-celular" style="color: red; display: none;">Por favor completar este campo</span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="correo" placeholder="Correo" value="{{ecliente.9}}"
+                class="form-control" autocomplete="off">
+                <span id="error-correo" style="color: red; display: none;">Por favor completar este campo</span>
+            </div>           
+            
+            <button type="submit" class="btn btn-success btn.block">
+               Guardar
+            </button>
+        
+        
+        </form>
+        
+    </div>
+</div>
+<script>
+    function validateForm() {
+      var isValid = true;
+  
+      var nomcliente = document.forms[0]["nomcliente"].value;
+      if (nomcliente === "") {
+        document.getElementById("error-nomcliente").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-nomcliente").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+    // Agrega validaciones para otros campos si es necesario
+      var apellidocliente = document.forms[0]["apellidocliente"].value;
+      if (apellidocliente === "") {
+         document.getElementById("error-apellidocliente").style.display = "block";
+         isValid = false;
+      } else {
+         document.getElementById("error-apellidocliente").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+    //otro
+      var  direccion = document.forms[0]["direccion"].value;
+      if (direccion === "") {
+        document.getElementById("error-direccion").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-direccion").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+    //otro
+      var selectedValue = document.getElementById("tipocliente").value;
+      if (selectedValue === "") {
+        document.getElementById("error-tipocliente").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-tipocliente").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+  
+    //otro
+      var selectedValue = document.getElementById("certificado").value;
+      if (selectedValue === "") {
+        document.getElementById("error-certificado").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-certificado").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+    //otro
+      var  presupuesto = document.forms[0]["presupuesto"].value;
+      if (presupuesto === "") {
+        document.getElementById("error-presupuesto").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-presupuesto").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+    //otro
+      var cuit = document.forms[0]["cuit"].value;
+      if (cuit === "") {
+        document.getElementById("error-cuit").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-cuit").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+    //otro
+      var celular = document.forms[0]["celular"].value;
+      if ( celular === "") {
+        document.getElementById("error-celular").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-celular").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+    //otro
+      var correo = document.forms[0]["correo"].value;
+      if ( correo === "") {
+        document.getElementById("error-correo").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("error-correo").style.display = "none"; // Oculta el mensaje de error si el campo está completo
+      }
+      return isValid;  
+    }
+  </script>
+
+
+{% endblock %}
